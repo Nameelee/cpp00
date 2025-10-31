@@ -8,8 +8,9 @@ int main(void) {
 
 	std::string command;
 
-	std::cout << "Hallo. This is my humble phonebook" << std::endl;
+	std::cout << "**********Hallo. This is my humble phonebook**********" << std::endl;
 	std::cout << "You can use: ADD, SEARCH, EXIT" << std::endl;
+	std::cout << "******************************************************" << std::endl;
 
 	while (true) {
 		std::cout << "PhoneBook > ";
@@ -27,9 +28,7 @@ int main(void) {
 		} else if (command == "EXIT") {
 			break;
 		} else {
-
 		}
-
 	}
 
 	std::cout << "PhoneBook is finshed. All of your contacts will be dissapeard." << std::endl;

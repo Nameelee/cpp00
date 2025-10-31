@@ -45,12 +45,10 @@ void PhoneBook::addContact(void) {
 	std::string first = getInput("1. First Name: ");
 	std::string last = getInput("2. Last Name: ");
 	std::string nick = getInput("3. Nickname: ");
-	std::string secret = getInput("4. Darkest Secret: ");
 
 	this->_contacts[this->_currentIndex].setFirstName(first);
 	this->_contacts[this->_currentIndex].setLastName(last);
 	this->_contacts[this->_currentIndex].setNickname(nick);
-	this->_contacts[this->_currentIndex].setDarkestSecret(secret);
 
 	this->_currentIndex = (this->_currentIndex + 1) % 8;//to rewrite if over 7
 
@@ -83,6 +81,7 @@ static void printSearchHeader(void) {
 	std::cout << "|" << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(10) << "First Name" << "|";
 	std::cout << std::setw(10) << "Last Name" << "|";
+	std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
 	std::cout << "--------------------------------------------" << std::endl;
 }
 
@@ -90,6 +89,8 @@ void PhoneBook::displayContactDetails(int index) const {
 
 	std::cout << "----info (Index: " << index << ") ----"  << std::endl;
 	std::cout << " 1.First Name: " << this->_contacts[index].getFirstName()<< std::endl;
+	std::cout << " 2.Last Name: " << this->_contacts[index].getLastName()<< std::endl;
+	std::cout << " 3.Nickname: " << this->_contacts[index].getNickname()<< std::endl;
 	std::cout << "---------------" << std::endl;
  }
 
