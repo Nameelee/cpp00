@@ -23,3 +23,8 @@ int main(int ac, char *av[])
 	std::cout << std::endl;
 	return 0;
 }
+
+/**
+ * "!": shell program skip this. So it should be " ! "
+ * std::cout (standard output stream)
+ */
