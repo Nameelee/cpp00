@@ -33,10 +33,11 @@ int main(int ac, char *av[])
 		}
 	}
 	std::cout << std::endl;
-	return 0;
+	return (0);
 }
 
 /**
  * "!": shell program skip this. So it should be " ! "
+ * In the subject, it show " ! ", that means don't space at your own
  * std::cout (standard output stream)
  */
