@@ -30,6 +30,15 @@ PhoneBook::~PhoneBook(void) {
 /*
 ** ------------------------- (feature ADD) ---------------------------
 */
+static bool isOnlySpaces(std::string str) {
+
+	for (size_t i = 0; i < str.length(); i++) {
+		if (std::isspace(str[i]) == false)
+			return (false);
+	}
+	return (true);
+}
+
 static std::string getInput(std::string prompt) {
 
 	std::string input = "";
@@ -43,7 +52,7 @@ static std::string getInput(std::string prompt) {
             exit(0);
         }
 
-		if (input.empty() == false) {
+		if (input.empty() == false && isOnlySpaces(input) == false) {
 			break; 
 		}
 		std::cout << "Error\n You can't empty that field. Please input that field." << std::endl;
@@ -138,13 +147,19 @@ void PhoneBook::displayContactDetails(int index) const {
 	std::cout << "---------------------------------------------" << std::endl;
 
 	while (true) {
-		std::cout << "Input the index number to see the details. (0 ~ " << (this-> _contactCount - 1) << "): ";
+		std::cout << "Input the index number to see the details. (0 ~ " 
+				  << (this-> _contactCount - 1) 
+				  << ") or type 'EXIT' to return: ";
 		std::string inputStr;
 		std::getline(std::cin, inputStr);;
 
 		if (std::cin.eof()) {
 			std::cout << std::endl << "Terminated input." << std::endl;
 			exit(0);
+		}
+
+		if (inputStr == "EXIT") {
+			break;
 		}
 
 		std::stringstream ss(inputStr);

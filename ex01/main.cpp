@@ -43,6 +43,6 @@ int main(void) {
 		}
 	}
 
-	std::cout << "PhoneBook is finshed. All of your contacts will be dissapeard." << std::endl;
+	std::cout << "PhoneBook is finished. All of your contacts will be lost forever." << std::endl;
 	return 0;
 }
